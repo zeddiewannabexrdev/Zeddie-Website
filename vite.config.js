@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [
     react()
   ],
-  base: '/My-Landing-Page/',
+  base: '/Zeddie-Website/',
 })
