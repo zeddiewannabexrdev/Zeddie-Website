@@ -1,17 +1,28 @@
+import { motion } from 'framer-motion';
 import cvFile from '../assets/CV-Unity-Developer-Dao-An-Hoang-Long.pdf';
 import myImg from '../assets/myimg.jpg';
 
 export default function Navbar() {
   return (
     <>
-      <div className="fixed top-6 right-6 z-50">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="fixed top-6 right-6 z-50"
+      >
         <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-neutral-700 hover:border-neon-red transition-colors shadow-lg cursor-pointer hidden sm:block group relative backdrop-blur-sm">
           <img src={myImg} alt="Avatar AnLong" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300" />
           <div className="absolute inset-0 bg-neon-red/10 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
-      </div>
+      </motion.div>
 
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-auto">
+      <motion.header 
+        initial={{ opacity: 0, y: -20, x: "-50%" }}
+        animate={{ opacity: 1, y: 0, x: "-50%" }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-6 left-1/2 z-50 w-[90%] md:w-auto"
+      >
         <nav className="glass-pill rounded-full px-6 md:px-8 py-3 flex items-center justify-between md:justify-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] mx-auto w-full">
           <a href="#home" className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase md:block hidden">Home</a>
           <a href="#about" className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase md:block hidden">About</a>
@@ -28,7 +39,7 @@ export default function Navbar() {
             Resume
           </a>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 }

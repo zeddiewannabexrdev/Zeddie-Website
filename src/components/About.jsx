@@ -1,20 +1,40 @@
+import { motion } from 'framer-motion';
+
 export default function About() {
   return (
     <section id="about" className="max-w-7xl mx-auto px-6 py-24 relative z-10 space-y-8">
-      <div className="text-center mb-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">About Me</h2>
          <div className="w-16 h-1 bg-neon-red mx-auto mt-6 shadow-[0_0_10px_rgba(255,42,42,0.6)]" />
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-5 bento-box flex flex-col justify-center">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="lg:col-span-5 bento-box flex flex-col justify-center"
+        >
           <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest font-mono border-b border-neutral-800 pb-4">Overview</h3>
           <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-medium">
             Bringing imagination into reality through code and 3D spaces. Specializing in Extended Reality (XR) and Unity Development. Deep interest in Malware Analysis and System Security. Always learning, always optimizing to build the future of interactive experiences.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="lg:col-span-7 flex flex-col gap-6">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="lg:col-span-7 flex flex-col gap-6"
+        >
           
           <div className="bento-box font-mono text-xs md:text-sm leading-7">
             <div className="flex gap-2 mb-4 border-b border-neutral-800 pb-4">
@@ -65,7 +85,7 @@ export default function About() {
                </li>
              </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

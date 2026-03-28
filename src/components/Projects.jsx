@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Projects() {
   const projects = [
     {
@@ -25,14 +27,27 @@ export default function Projects() {
 
   return (
     <section id="projects" className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-      <div className="text-center mb-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">Projects</h2>
          <div className="w-16 h-1 bg-neon-red mx-auto mt-6 shadow-[0_0_10px_rgba(255,42,42,0.6)]" />
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map(p => (
-          <div key={p.id} className="bento-box p-0 flex flex-col h-full group bg-neutral-900/20">
+        {projects.map((p, index) => (
+          <motion.div 
+            key={p.id} 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            className="bento-box p-0 flex flex-col h-full group bg-neutral-900/20"
+          >
              <div className="aspect-video w-full bg-[#0a0a0a] relative overflow-hidden flex items-center justify-center border-b border-neutral-800">
                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10" />
                <div className="text-neutral-600 text-[10px] tracking-widest font-mono uppercase z-20 group-hover:scale-110 group-hover:text-neon-red transition-all duration-500">
@@ -55,7 +70,7 @@ export default function Projects() {
                  </button>
                </div>
              </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
