@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function TechStack() {
-  const iconsUrl = "https://skillicons.dev/icons?i=html,css,js,threejs,unity,cs,github,unreal,cpp,linux,arch,gitlab&theme=dark";
+  const iconsUrl = "https://skillicons.dev/icons?i=html,css,js,react,vite,py,threejs,unity,cs,cpp,github,gitlab,vscode,visualstudio,unreal,linux,arch&theme=dark";
 
   return (
     <section id="tech" className="py-24 relative z-10 w-full overflow-hidden border-y border-neutral-900/50 bg-[#020202]">
