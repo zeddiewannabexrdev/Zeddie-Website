@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function TechStack() {
-  const iconsUrl = "https://skillicons.dev/icons?i=html,css,js,react,vite,py,threejs,unity,cs,cpp,github,gitlab,vscode,visualstudio,unreal,linux,arch&theme=dark";
+  const iconsUrl = "https://skillicons.dev/icons?i=html,css,js,react,vite,py,threejs,unity,cs,cpp,github,gitlab,vscode,visualstudio,unreal,linux,arch,kali,blender&theme=dark&perline=50";
 
   return (
     <section id="tech" className="py-24 relative z-10 w-full overflow-hidden border-y border-neutral-900/50 bg-[#020202]">
@@ -12,7 +12,7 @@ export default function TechStack() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-         <h2 className="text-2xl font-bold uppercase tracking-widest text-neutral-400 font-mono">Core Technologies</h2>
+         <h2 className="text-2xl font-bold uppercase tracking-widest text-neutral-400 font-mono">TechStack</h2>
       </motion.div>
 
       <motion.div 
