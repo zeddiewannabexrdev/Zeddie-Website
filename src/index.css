@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans overflow-x-hidden;
+    background-color: #020202; /* Deep space dark */
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .glass-pill {
+    @apply bg-neutral-900/40 backdrop-blur-md border border-neutral-700/50;
+  }
+  
+  .bento-box {
+    @apply bg-[#050505] border border-neutral-800 rounded-2xl p-8 hover:border-neutral-700 transition-colors relative overflow-hidden;
+  }
+}
+
+/* Meteor falling animation */
+@keyframes meteor {
+  0% { transform: translateY(-50vh) translateX(50vw) rotate(45deg); opacity: 1; }
+  20% { opacity: 1; }
+  100% { transform: translateY(150vh) translateX(-150vw) rotate(45deg); opacity: 0; }
+}

@@ -1,0 +1,20 @@
+export default function Hero() {
+  return (
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative z-10 px-6 text-center">
+      <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur text-xs font-bold text-neutral-400 uppercase tracking-[0.3em] overflow-hidden">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-red to-white drop-shadow-[0_0_15px_rgba(255,42,42,0.8)] relative z-10">
+          HELLO WORLD
+        </span>
+      </div>
+      
+      <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl w-full max-w-6xl font-extrabold tracking-tighter leading-tight text-white mb-6">
+        I'm An Long <br className="hidden sm:block"/>
+        <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-500 font-bold block mt-4">(Zeddiewannabexrdev)</span>
+      </h1>
+      
+      <p className="text-lg md:text-2xl lg:text-3xl text-neutral-400 font-medium max-w-2xl tracking-tight">
+        Mixed Reality Developer
+      </p>
+    </section>
+  );
+}
