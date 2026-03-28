@@ -66,5 +66,5 @@ To run this project locally:
 
 ---
 <div align="center">
-  <p><i>Coded by AnLong XR (2026)</i></p>
+  <p><i>Coded by Zeddiewannabexrdev (2026)</i></p>
 </div>
