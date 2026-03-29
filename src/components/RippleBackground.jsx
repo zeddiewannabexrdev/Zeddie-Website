@@ -36,9 +36,10 @@ export default function RippleBackground() {
     // 2: Explosive Shockwave
     // 3: Settled interactive state
     let phase = 1; 
-    let dropY = -30;
+    let dropY = -60;
     let dropVy = 0;
-    const gravity = 0.12; // Even slower drop acceleration
+    const gravity = 0.06; // Very slow, cinematic drop
+    let dropTrail = []; // Store trailing positions for the tail effect
     
     let shockwaveRadius = 0;
     let maxShockwaveRadius = Math.sqrt(width * width + height * height);
@@ -76,19 +77,47 @@ export default function RippleBackground() {
       if (phase === 1) {
         dropVy += gravity;
         dropY += dropVy;
-        
-        // Draw the glowing drop
+
+        // Store trail positions (keep last 28 for a longer tail)
+        dropTrail.push({ y: dropY, vy: dropVy });
+        if (dropTrail.length > 28) dropTrail.shift();
+
+        // Draw the glowing tail (fade out older positions)
+        for (let i = 0; i < dropTrail.length; i++) {
+          const t = dropTrail[i];
+          const tailAlpha = (i / dropTrail.length) * 0.6; // fade from transparent to semi-opaque
+          const tailRadius = 2 + (i / dropTrail.length) * 3; // grow towards the drop
+          ctx.beginPath();
+          ctx.arc(width / 2, t.y, tailRadius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 42, 42, ${tailAlpha})`;
+          ctx.shadowBlur = tailAlpha * 20;
+          ctx.shadowColor = '#ff2a2a';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        // Draw the elongated teardrop body (stretched ellipse based on velocity)
+        const stretchY = Math.min(dropVy * 1.6, 22); // how elongated is the drop
         ctx.beginPath();
-        ctx.arc(width / 2, dropY, 5, 0, Math.PI * 2);
-        ctx.fillStyle = '#ff2a2a'; // neon red
-        ctx.shadowBlur = 25;
-        ctx.shadowColor = '#ff2a2a';
+        ctx.ellipse(width / 2, dropY - stretchY / 2, 5, 5 + stretchY / 2, 0, 0, Math.PI * 2);
+        ctx.fillStyle = '#ff2a2a';
+        ctx.shadowBlur = 40;
+        ctx.shadowColor = '#ff0000';
         ctx.fill();
-        ctx.shadowBlur = 0; // reset
+
+        // Bright glowing core
+        ctx.beginPath();
+        ctx.arc(width / 2, dropY, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 200, 200, 0.9)';
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = '#ffffff';
+        ctx.fill();
+        ctx.shadowBlur = 0;
         
         // When it hits the vertical center
         if (dropY >= height / 2) {
           dropY = height / 2;
+          dropTrail = []; // clear tail on impact
           phase = 2; // trigger shockwave
         }
       }
