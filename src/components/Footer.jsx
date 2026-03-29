@@ -24,7 +24,7 @@ const FacebookIcon = () => (
 export default function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="w-full border-t border-neutral-900/80 bg-[#010101] py-10 md:py-16 relative z-10 mt-12">
+    <footer id="contact" className="w-full border-t border-neutral-900/80 bg-[#010101] py-10 md:py-16 relative z-10 mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center">
         
         <div className="flex items-center gap-6 mb-8">

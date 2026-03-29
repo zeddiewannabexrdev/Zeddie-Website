@@ -92,6 +92,7 @@ export default function Navbar() {
           <a href="#tech" className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase lg:block hidden">{t('nav.techStack')}</a>
           <a href="#experience" className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase md:block hidden">{t('nav.experience')}</a>
           <a href="#projects" className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase md:block hidden">{t('nav.projects')}</a>
+          <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className="text-[10px] md:text-xs font-bold text-neutral-400 hover:text-white transition-colors tracking-widest uppercase md:block hidden">{t('nav.contact')}</button>
           
           <div className="w-px h-4 bg-neutral-700 mx-2 hidden md:block" />
           
@@ -169,7 +170,8 @@ export default function Navbar() {
               <a href="#competencies" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.skills')}</a>
               <a href="#tech" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.techStack')}</a>
               <a href="#experience" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.experience')}</a>
-              <a href="#projects" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase">{t('nav.projects')}</a>
+              <a href="#projects" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.projects')}</a>
+              <button onClick={() => { setShowMobileMenu(false); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase">{t('nav.contact')}</button>
             </motion.div>
           )}
         </AnimatePresence>
