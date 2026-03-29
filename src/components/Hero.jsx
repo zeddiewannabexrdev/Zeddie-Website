@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative z-10 px-6 text-center">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative z-10 px-4 sm:px-6 text-center">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -10,7 +12,7 @@ export default function Hero() {
         className="inline-block mb-6 px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur text-xs font-bold text-neutral-400 uppercase tracking-[0.3em] overflow-hidden"
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-red to-white drop-shadow-[0_0_15px_rgba(255,42,42,0.8)] relative z-10">
-          HELLO WORLD
+          {t('hero.hello')}
         </span>
       </motion.div>
       
@@ -30,7 +32,7 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="text-lg md:text-2xl lg:text-3xl text-neutral-400 font-medium max-w-2xl tracking-tight"
       >
-        Mixed Reality Developer
+        {t('hero.role')}
       </motion.p>
     </section>
   );

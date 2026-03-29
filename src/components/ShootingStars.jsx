@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 export default function ShootingStars() {
   const stars = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => ({
+    return Array.from({ length: 40 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
-      top: `${Math.random() * -20}%`,
+      top: `${Math.random() * 100}%`,
       animationDelay: `${Math.random() * 5}s`,
       animationDuration: `${2 + Math.random() * 3}s`,
     }));

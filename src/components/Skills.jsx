@@ -1,12 +1,15 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 export default function Skills() {
+  const { t } = useLanguage();
   const icons = "unity,cs,python,react,tailwind,vite,github,ai,ps,linux";
   const iconList = icons.split(',');
 
   return (
-    <section id="skills" className="max-w-7xl mx-auto px-6 py-10 mb-32 relative">
+    <section id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 py-10 mb-20 md:mb-32 relative">
       <div className="mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-neutral-100">
-          Vũ Khí <span className="text-neon-red text-glow-red">Công Nghệ</span>
+          {t('skills.title')} <span className="text-neon-red text-glow-red">{t('skills.subtitle')}</span>
         </h2>
         <div className="w-24 h-1 bg-neon-red mt-6 mb-4 shadow-glow-red" />
       </div>

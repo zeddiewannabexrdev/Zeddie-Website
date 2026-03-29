@@ -1,32 +1,14 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: "VR Interactive Simulator",
-      category: "XR / Unity",
-      description: "Realistic physical interaction system for weapons and equipment in a virtual XR environment, featuring highly optimized particle systems.",
-      tech: "Unity, C#, Oculus SDK"
-    },
-    {
-      id: 2,
-      title: "Malware Sandbox",
-      category: "Cyber Security",
-      description: "Automated malware behavior analysis sandbox environment, hooking system calls and visualizing intuitive reports via structural graphs.",
-      tech: "Python, C++, Windows APIs"
-    },
-    {
-      id: 3,
-      title: "Real-time PBR Configurator",
-      category: "WebGL / Three.js",
-      description: "A versatile 3D product configurator deployed directly on the web with 360-degree interactive rotations and physically based environment lighting.",
-      tech: "React, Three.js, WebGL"
-    }
-  ];
+  const { t } = useLanguage();
+  const projects = t('projects.list');
+
+  if (!Array.isArray(projects)) return null;
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+    <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +16,7 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">Projects</h2>
+         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">{t('projects.title')}</h2>
          <div className="w-16 h-1 bg-neon-red mx-auto mt-6 shadow-[0_0_10px_rgba(255,42,42,0.6)]" />
       </motion.div>
 
@@ -51,7 +33,7 @@ export default function Projects() {
              <div className="aspect-video w-full bg-[#0a0a0a] relative overflow-hidden flex items-center justify-center border-b border-neutral-800">
                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10" />
                <div className="text-neutral-600 text-[10px] tracking-widest font-mono uppercase z-20 group-hover:scale-110 group-hover:text-neon-red transition-all duration-500">
-                  [ Thumbnail: 16:9 ]
+                  {t('projects.thumbnail')}
                </div>
                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGgyMHYyMEgwem0xMCAxMGgxMHYxMEgxMHoiIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iLjE1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=')] opacity-20 pointer-events-none z-0" />
              </div>
@@ -66,7 +48,7 @@ export default function Projects() {
                    {p.tech}
                  </span>
                  <button className="text-[10px] font-bold uppercase tracking-wider text-white bg-neutral-800 px-4 py-2 flex items-center gap-2 rounded-sm border border-neutral-700 hover:bg-neon-red hover:border-transparent transition-all">
-                   View Detail
+                   {t('projects.viewDetail')}
                  </button>
                </div>
              </div>

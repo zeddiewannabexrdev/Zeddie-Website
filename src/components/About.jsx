@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
   return (
-    <section id="about" className="max-w-7xl mx-auto px-6 py-24 relative z-10 space-y-8">
+    <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10 space-y-6 md:space-y-8">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -10,7 +12,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">About Me</h2>
+         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-100">{t('about.title')}</h2>
          <div className="w-16 h-1 bg-neon-red mx-auto mt-6 shadow-[0_0_10px_rgba(255,42,42,0.6)]" />
       </motion.div>
 
@@ -22,9 +24,9 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="lg:col-span-5 bento-box flex flex-col justify-center"
         >
-          <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest font-mono border-b border-neutral-800 pb-4">Overview</h3>
+          <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest font-mono border-b border-neutral-800 pb-4">{t('about.overview')}</h3>
           <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-medium">
-            Bringing imagination into reality through code and 3D spaces. Specializing in Extended Reality (XR) and Unity Development. Deep interest in Malware Analysis and System Security. Always learning, always optimizing to build the future of interactive experiences.
+            {t('about.overviewText')}
           </p>
         </motion.div>
 
@@ -45,12 +47,12 @@ export default function About() {
             <div className="overflow-x-auto whitespace-pre">
               <span className="text-purple-400">interface</span> <span className="text-blue-400">Developer</span> {'{'}
               <div className="pl-6 border-l border-neutral-800/50 ml-2 mt-2 mb-2">
-                <span className="text-neutral-400">role:</span> <span className="text-green-300">"XR Unity Developer"</span>;<br/>
-                <span className="text-neutral-400">born:</span> <span className="text-orange-300">2004</span>;<br/>
-                <span className="text-neutral-400">location:</span> <span className="text-green-300">"Hanoi, Vietnam"</span>;<br/>
-                <span className="text-neutral-400">education:</span> <span className="text-green-300">"Information Technology @ PTIT"</span>;<br/>
-                <span className="text-neutral-400">company:</span> <span className="text-green-300">"VRTech"</span>;<br/>
-                <span className="text-neutral-400">currentFocus:</span> [
+                <span className="text-neutral-400">{t('about.role')}:</span> <span className="text-green-300">{t('about.roleValue')}</span>;<br/>
+                <span className="text-neutral-400">{t('about.born')}:</span> <span className="text-orange-300">2004</span>;<br/>
+                <span className="text-neutral-400">{t('about.location')}:</span> <span className="text-green-300">{t('about.locationValue')}</span>;<br/>
+                <span className="text-neutral-400">{t('about.education')}:</span> <span className="text-green-300">{t('about.educationValue')}</span>;<br/>
+                <span className="text-neutral-400">{t('about.company')}:</span> <span className="text-green-300">{t('about.companyValue')}</span>;<br/>
+                <span className="text-neutral-400">{t('about.currentFocus')}:</span> [
                   <span className="text-green-300 mt-1 block pl-4">"Unity",</span>
                   <span className="text-green-300 block pl-4">"XR/VR/AR",</span>
                   <span className="text-green-300 block pl-4 pb-1">"Malware Analysis"</span>
@@ -60,28 +62,28 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bento-box flex flex-col justify-center">
-             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest font-mono border-b border-neutral-800 pb-4">Quick Stats</h3>
+           <div className="bento-box flex flex-col justify-center">
+             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest font-mono border-b border-neutral-800 pb-4">{t('about.stats')}</h3>
              <ul className="space-y-4 text-xs md:text-sm text-neutral-300 font-medium">
                <li className="flex items-start gap-3">
                  <div className="w-2 h-2 bg-neon-red mt-1.5 rounded-sm shrink-0" />
-                 <span className="leading-snug">Official XR Developer at VRTech (since Oct 2024);</span>
+                 <span className="leading-snug">{t('about.stat1')}</span>
                </li>
                <li className="flex items-start gap-3">
                  <div className="w-2 h-2 bg-neon-red mt-1.5 rounded-sm shrink-0" />
-                 <span className="leading-snug">IT student at PTIT;</span>
+                 <span className="leading-snug">{t('about.stat2')}</span>
                </li>
                <li className="flex items-start gap-3">
                  <div className="w-2 h-2 bg-neon-red mt-1.5 rounded-sm shrink-0" />
-                 <span className="leading-snug">Unity developer since Apr 2023;</span>
+                 <span className="leading-snug">{t('about.stat3')}</span>
                </li>
                <li className="flex items-start gap-3">
                  <div className="w-2 h-2 bg-neon-red mt-1.5 rounded-sm shrink-0" />
-                 <span className="leading-snug">Exploring the dark arts of Malware Analysis;</span>
+                 <span className="leading-snug">{t('about.stat4')}</span>
                </li>
                <li className="flex items-start gap-3">
                  <div className="w-2 h-2 bg-neon-red mt-1.5 rounded-sm shrink-0" />
-                 <span className="leading-snug">Ask me about C++, C#, Unity, Unreal Engine and Game Logic.</span>
+                 <span className="leading-snug">{t('about.stat5')}</span>
                </li>
              </ul>
           </div>

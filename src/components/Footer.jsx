@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const GithubIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,9 +22,10 @@ const FacebookIcon = () => (
 );
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
-    <footer className="w-full border-t border-neutral-900/80 bg-[#010101] py-16 relative z-10 mt-12">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center">
+    <footer className="w-full border-t border-neutral-900/80 bg-[#010101] py-10 md:py-16 relative z-10 mt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center">
         
         <div className="flex items-center gap-6 mb-8">
           <a href="https://github.com/zeddiewannabexrdev" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:-translate-y-1 transition-all duration-300 leading-none">
@@ -35,13 +37,13 @@ export default function Footer() {
           <a href="https://www.facebook.com/zeddiewannapeace/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:-translate-y-1 transition-all duration-300 leading-none">
              <FacebookIcon />
           </a>
-          <a href="mailto:anlongvrdev.is.working@gmail.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:-translate-y-1 transition-all duration-300 leading-none">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anlongvrdev.is.working@gmail.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:-translate-y-1 transition-all duration-300 leading-none">
              <Mail size={20} />
           </a>
         </div>
 
         <p className="text-neutral-600 text-xs font-mono tracking-widest uppercase">
-          © {new Date().getFullYear()} AnLong XR.
+          {t('footer.copyright')}
         </p>
       </div>
     </footer>
