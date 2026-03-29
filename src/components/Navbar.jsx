@@ -68,7 +68,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20, x: "-50%" }}
         animate={{ opacity: 1, y: 0, x: "-50%" }}
         transition={{ duration: 0.5 }}
-        className="fixed top-6 left-1/2 z-50 w-[90%] md:w-auto"
+        className="fixed top-6 left-1/2 z-40 w-auto min-w-[220px]"
       >
         <nav className="glass-pill rounded-full px-6 md:px-8 py-3 flex items-center justify-between md:justify-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] mx-auto w-full">
           {/* Hamburger Menu Toggle (Mobile Only) */}
@@ -158,11 +158,11 @@ export default function Navbar() {
         <AnimatePresence>
           {showMobileMenu && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -10, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, x: "-50%" }}
+              exit={{ opacity: 0, y: -10, x: "-50%" }}
               transition={{ duration: 0.2 }}
-              className="absolute top-[calc(100%+12px)] left-0 w-full bg-black/95 border border-neutral-800 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.9)] backdrop-blur-xl z-40 flex flex-col items-center py-4 md:hidden"
+              className="absolute top-[calc(100%+12px)] left-1/2 w-[85vw] sm:w-[350px] bg-black/95 border border-neutral-800 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.9)] backdrop-blur-xl z-40 flex flex-col items-center py-4 md:hidden"
             >
               <a href="#home" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.home')}</a>
               <a href="#about" onClick={() => setShowMobileMenu(false)} className="w-full text-center py-3 text-xs font-bold text-neutral-300 hover:text-neon-red hover:bg-neutral-900/50 transition-colors tracking-widest uppercase border-b border-neutral-800/50">{t('nav.about')}</a>
