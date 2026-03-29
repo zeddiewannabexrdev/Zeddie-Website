@@ -14,7 +14,7 @@ export default function Skills() {
         <div className="w-24 h-1 bg-neon-red mt-6 mb-4 shadow-glow-red" />
       </div>
 
-      {/* Lưới phân bổ Icon: grid chuẩn theo yêu cầu */}
+      {/* Lưới phân bổ Icon: grid chuẩn */}
       <div className="grid grid-cols-5 md:grid-cols-10 gap-6 justify-items-center bg-neutral-900/40 p-10 rounded border border-neutral-800 backdrop-blur-sm">
         {iconList.map((icon) => (
           <div key={icon} className="relative group w-14 h-14 md:w-16 md:h-16 shrink-0">

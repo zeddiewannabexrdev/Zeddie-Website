@@ -6,7 +6,7 @@ import CoreCompetencies from './components/CoreCompetencies';
 import WorkExperience from './components/WorkExperience';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import VideoBackground from './components/VideoBackground';
+import RippleBackground from './components/RippleBackground';
 import InteractiveCursor from './components/InteractiveCursor';
 import ShootingStars from './components/ShootingStars';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -16,7 +16,7 @@ function App() {
     <LanguageProvider>
       <div className="min-h-screen selection:bg-neon-red selection:text-white relative bg-[#020202]">
         <InteractiveCursor />
-        <VideoBackground />
+        <RippleBackground />
         <ShootingStars />
         <Navbar />
         
