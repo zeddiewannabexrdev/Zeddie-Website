@@ -51,7 +51,7 @@ const translations = {
       roles: [
         {
           company: "VRTech JSC (On-site)",
-          role: "Unity Developer",
+          role: "XR Developer",
           date: "Nov 2025 - Present",
           desc: "Developing VR games published on Meta Horizon Store and creating high-risk simulation applications for rescue and firefighting training. Focused on standalone hardware optimization, frame rate stability, and user comfort."
         },
